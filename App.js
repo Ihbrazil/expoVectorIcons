@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
-export default function App() {
+import { Entypo, FontAwesome, MaterialIcons } from '@expo/vector-icons';
+
+import estilos from "./estilos";
+
+export default function App () {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <View style={ estilos.container }>
+      <Text style={ estilos.texto }>Casa (home)</Text>
+      <Entypo name="home" size={80} color="black" />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      <Text style={ estilos.texto }>Usuário (user)</Text>
+      <FontAwesome name="user" size={80} color="black" />
+
+      <Text style={ estilos.texto }>Usuário Verificado (verified-user)</Text>
+      <MaterialIcons name="verified-user" size={ 50 } color="#d9d9d9" />
+      
+      <Text style={ estilos.texto }>Círculo de Usuário supervisionado (supervised-user-circle)</Text>
+      <MaterialIcons name="supervised-user-circle" size={ 50 } color="gold" />
+    </View>
+  )
+};
